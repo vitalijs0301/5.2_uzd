@@ -7,9 +7,9 @@
 </head>
 <body>
     <p><h1>Kvadrātvienādojuma risinātājs</h1></p>
-    <p><input type="text" id="a" placeholder="a"> 
-        <input type="text" id="b" placeholder="b"> 
-        <input type="text" id="c" placeholder="c"></p>
+    <p><input type="text" id="ak" placeholder="a"> 
+        <input type="text" id="bk" placeholder="b"> 
+        <input type="text" id="ck" placeholder="c"></p>
     <p><button onclick="aprekinat()">Aprēķināt</button></p>
     <p><span id="rezultats"></span></p>
 
@@ -29,9 +29,9 @@
         }
 
         function aprekinat(){
-            var a=Number(a.value);
-            var b=Number(b.value);
-            var c=Number(c.value);
+            var a=Number(ak.value);
+            var b=Number(bk.value);
+            var c=Number(ck.value);
 
             if (isNaN(a) || isNaN(b) || isNaN(c) || a===0){
                 rezultats.innerHTML = "Lūdzu ievadi korektus koeficientus!";
