@@ -7,7 +7,42 @@
 </head>
 <body>
     <p><h1>Kvadrātvienādojuma risinātājs</h1></p>
-    <p><input type="text" id="a" placeholder="a"> <input type="text" id="b" placeholder="b"> <input type="text" id="c" placeholder="c"></p>
+    <p><input type="text" id="a" placeholder="a"> 
+        <input type="text" id="b" placeholder="b"> 
+        <input type="text" id="c" placeholder="c"></p>
     <p><button onclick="aprekinat()">Aprēķināt</button></p>
+    <p><span id="rezultats"></span></p>
+
+    <script>
+        function disk(a, b, c){
+            return b*b-4*a*c;
+        }
+
+        function saknes(a,b,D){
+            if (D<0){
+                return false;
+            } else {
+                var x1=(-b+Math.sqrt(D)) / (2*a);
+                var x2=(-b-Math.sqrt(D)) / (2*a);
+                return[x1,x2];
+            }
+        }
+
+        function aprekinat(){
+            var a=Number(a.value);
+            var b=Number(b.value);
+            var c=Number(c.value);
+
+            if (isNaN(a) || isNaN(b) || isNaN(c) || a===0){
+                rezultats.innerHTML = "Lūdzu ievadi korektus koeficientus!";
+                return;
+            }
+
+            var atb=saknes(a,b, disk(a,b,c));
+            if (atb==false) {
+                rezultats.innerHTML=`Saknes: x1 = ${atb[0].toFixed(3)}, x2 = ${atb[1].toFixed(3)}`;
+            }
+        }
+    </script>
 </body>
 </html>
