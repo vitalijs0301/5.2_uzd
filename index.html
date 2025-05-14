@@ -40,6 +40,8 @@
 
             var atb=saknes(a,b, disk(a,b,c));
             if (atb==false) {
+                rezultats.innerHTML="Nav sakņu";
+            } else {
                 rezultats.innerHTML=`Saknes: x1 = ${atb[0].toFixed(3)}, x2 = ${atb[1].toFixed(3)}`;
             }
         }
